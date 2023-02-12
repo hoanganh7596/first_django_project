@@ -17,3 +17,7 @@ def contact(request):
 
 def news(request):
     return render(request, 'pages/news.html')
+
+
+def error(request, exception):
+    return render(request, 'pages/error.html', {'message': exception})
