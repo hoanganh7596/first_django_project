@@ -18,8 +18,17 @@
             <div class="col-sm-2">
                 <center><img src="{% static 'images/vk.jpg' %}" class="responsive-img" style="max-height: 150px"/></center>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                 <center><h1>This is a blog created by Django</h1></center>
+            </div>
+            <div class="col-sm-2">
+                {% if user.username %}
+                <p>Hello {{user.username}}!</p>
+                <p><a href="{% url 'logout' %}">Logout</a></p>
+                {% else %}
+                <p><a href="{% url 'register' %}">Register</a></p>
+                <p><a href="{% url 'login' %}">Login</a></p>
+                {% endif %}
             </div>
         </div>
         <div class="row">

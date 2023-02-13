@@ -9,5 +9,8 @@
 <img src="{{post.image.url}}" width="500px" height="300px"/>
 
 {% endfor %}
+{% if page_obj.has_next %}
+<a href="{{request.path}}?page={{page_obj.next_page_number}}">Next page</a>
+{% endif %}
 
 {% endblock %}
